@@ -7,7 +7,7 @@
 /* RESET */
 * {
   box-sizing: border-box;
-  /* margin: 0; */
+  margin: 0;
   padding: 0;
 }
 
@@ -29,6 +29,14 @@
   --fs-m: 1.5rem;
   --fs-reg: 1rem;
 
+  --letter-spacing-xl: -2.5px;
+  --letter-spacing-l: -1.5px;
+
+  --line-height-xl: 2.5rem;
+  --line-height-l: 2.5rem;
+  --line-height-m: 2rem;
+  --line-height-reg: 1.625rem;
+
   /* Padding and margins */
   --section-padding: 1rem;
 }
@@ -40,15 +48,19 @@
     --fs-m: 2rem;
     --fs-reg: 1.125rem;
 
+    --line-height-xl: 4.5rem;
+    --line-height-l: 3.5rem;
+    --line-height-m: 2rem;
+    --line-height-reg: 1.75rem;
+
     --section-padding: 1.875rem;
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1150px) {
   :root {
     --fs-xl: 5.5rem;
-
-    --section-padding: 10.3rem;
+    --line-height-xl: 5.5rem;
   }
 }
 
@@ -61,29 +73,54 @@ body {
   color: var(--clr-text-light);
 }
 
-.container-main {
-  position: relative;
+header,
+main,
+footer {
+  padding: 0 var(--section-padding);
+}
 
+.container {
   max-width: 1110px;
   margin: 0 auto;
 }
 
+.contact-link {
+  display: inline-block;
+  color: var(--clr-text-light);
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.625rem;
+  letter-spacing: 2.3px;
+  text-decoration: none;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--clr-primary);
+}
+
+.contact-link:hover {
+  color: var(--clr-primary);
+}
+
 /* HEADER */
+
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 1rem var(--section-padding);
+}
 
 .header__container {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  position: relative;
-
-  width: 200px;
-  margin: 0 auto;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .header__title {
   font-size: var(--fs-m);
-  line-height: 2rem;
+  line-height: var(--line-height-m);
 }
 
 .socials__list {
@@ -93,25 +130,125 @@ body {
   list-style: none;
 }
 
-.header__profile-img {
-  position: absolute;
-  z-index: -1;
+@media screen and (min-width: 768px) {
+  .header__container {
+    flex-direction: row;
+    justify-content: space-between;
 
-  width: 100%;
+    padding-right: var(--section-padding);
+  }
 }
 
-/* LITE PROBLEM ATT POSITIONERA DESSA - KAN BEHÖVA JUSTERAS */
-.header__rings {
-  position: absolute;
-  top: 150px;
-  left: -300px;
-  z-index: -5;
-}
-.header__circle {
-  position: absolute;
-  top: 300px;
-  right: -70px;
-  z-index: -5;
+/* INTRO SECTION */
+
+.intro__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid white;
 }
 
-/* Påbörjat styling av header - ej klar */
+.intro__profile-img {
+  margin-bottom: 2rem;
+}
+
+.intro__text {
+  max-width: 21.4rem;
+  text-align: center;
+}
+
+.intro__heading {
+  margin-bottom: 2rem;
+
+  font-size: var(--fs-xl);
+  letter-spacing: var(--letter-spacing-xl);
+  line-height: var(--line-height-xl);
+}
+
+.intro__heading br {
+  display: none;
+}
+
+.intro__name {
+  border-bottom: 4px solid var(--clr-primary);
+}
+
+.intro__paragraph {
+  margin-bottom: 1.5rem;
+
+  font-size: var(--fs-reg);
+  line-height: var(--line-height-reg);
+  color: var(--clr-text-semilight);
+}
+
+@media screen and (min-width: 768px) {
+  .intro__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+
+    height: 37.5rem;
+    padding-right: 0;
+  }
+
+  .intro__profile-picture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  .intro__profile-img {
+    width: 20rem;
+    height: 37.5rem;
+  }
+
+  .intro__text {
+    max-width: 27.8rem;
+    text-align: left;
+  }
+
+  .intro__heading {
+    margin-bottom: 4rem;
+  }
+
+  .intro__heading br {
+    display: inline;
+  }
+
+  .intro__paragraph {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .intro__container {
+    align-items: center;
+    height: 45rem;
+  }
+
+  .intro__profile-img {
+    width: 27.8rem;
+    height: 45rem;
+  }
+
+  .intro__text {
+    position: relative;
+    top: 2rem;
+    max-width: 710px;
+  }
+
+  .intro__heading br {
+    display: none;
+  }
+
+  .intro__name {
+    border-bottom: 6px solid var(--clr-primary);
+  }
+
+  .intro__paragraph {
+    max-width: 27.8rem;
+    margin-bottom: 4rem;
+  }
+}

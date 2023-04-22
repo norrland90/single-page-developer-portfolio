@@ -7,8 +7,8 @@
     <title>Adam Keyes</title>
   </head>
   <body>
-    <header class="header container-main">
-      <div class="header__container">
+    <header class="header">
+      <div class="container header__container">
         <h1 class="header__title">adamkeyes</h1>
         <nav class="socials">
           <ul class="socials__list">
@@ -46,22 +46,41 @@
             </li>
           </ul>
         </nav>
-        <img
-          src="resources/images/image-profile-mobile.webp"
-          alt="Image of Adam Keyes"
-          class="header__profile-img"
-        />
       </div>
-      <img
-        src="resources/images/pattern-rings.svg"
-        alt="Image of patter with rings"
-        class="header__rings"
-      />
-      <img
-        src="resources/images/pattern-circle.svg"
-        alt="Image of circle"
-        class="header__circle"
-      />
     </header>
+    <main>
+      <section class="intro">
+        <div class="container intro__container">
+          <picture class="intro__profile-picture">
+            <source
+              media="(min-width: 1150px)"
+              srcset="resources/images/image-profile-desktop.webp"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="resources/images/image-profile-tablet.webp"
+            />
+            <img
+              class="intro__profile-img"
+              src="resources/images/image-profile-mobile.webp"
+              alt="picture of Adam Keyes"
+              width-="174"
+              height="383"
+            />
+          </picture>
+          <div class="intro__text">
+            <h2 class="intro__heading">
+              Nice to <br />meet you! I'm
+              <span class="intro__name">Adam Keyes.</span>
+            </h2>
+            <p class="intro__paragraph">
+              Based in the UK, I’m a front-end developer passionate about
+              building accessible web apps that users love.
+            </p>
+            <a href="#contact" class="contact-link">Contact Me</a>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
