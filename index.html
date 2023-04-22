@@ -51,23 +51,25 @@
     <main>
       <section class="intro">
         <div class="container intro__container">
-          <picture class="intro__profile-picture">
-            <source
-              media="(min-width: 1150px)"
-              srcset="resources/images/image-profile-desktop.webp"
-            />
-            <source
-              media="(min-width: 768px)"
-              srcset="resources/images/image-profile-tablet.webp"
-            />
-            <img
-              class="intro__profile-img"
-              src="resources/images/image-profile-mobile.webp"
-              alt="picture of Adam Keyes"
-              width-="174"
-              height="383"
-            />
-          </picture>
+          <div class="intro__profile-picture-container">
+            <picture>
+              <source
+                media="(min-width: 1150px)"
+                srcset="resources/images/image-profile-desktop.webp"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="resources/images/image-profile-tablet.webp"
+              />
+              <img
+                class="intro__profile-img"
+                src="resources/images/image-profile-mobile.webp"
+                alt="picture of Adam Keyes"
+                width-="174"
+                height="383"
+              />
+            </picture>
+          </div>
           <div class="intro__text">
             <h2 class="intro__heading">
               Nice to <br />meet you! I'm
@@ -77,7 +79,7 @@
               Based in the UK, I’m a front-end developer passionate about
               building accessible web apps that users love.
             </p>
-            <a href="#contact" class="contact-link">Contact Me</a>
+            <a href="#contact" class="link-primary">Contact Me</a>
           </div>
           <img
             src="resources/images/pattern-rings.svg"
@@ -95,34 +97,222 @@
       <section class="skills">
         <div class="container skills__container">
           <div class="skills__skill">
-            <h2 class="skills__header">HTML</h2>
+            <h2 class="skills__heading">HTML</h2>
             <p class="skills__paragraph">4 Years Experience</p>
           </div>
           <div class="skills__skill">
-            <h2 class="skills__header">CSS</h2>
+            <h2 class="skills__heading">CSS</h2>
             <p class="skills__paragraph">4 Years Experience</p>
           </div>
           <div class="skills__skill">
-            <h2 class="skills__header">Javascript</h2>
+            <h2 class="skills__heading">Javascript</h2>
             <p class="skills__paragraph">4 Years Experience</p>
           </div>
           <div class="skills__skill">
-            <h2 class="skills__header">Accessibility</h2>
+            <h2 class="skills__heading">Accessibility</h2>
             <p class="skills__paragraph">4 Years Experience</p>
           </div>
           <div class="skills__skill">
-            <h2 class="skills__header">React</h2>
+            <h2 class="skills__heading">React</h2>
             <p class="skills__paragraph">3 Years Experience</p>
           </div>
           <div class="skills__skill">
-            <h2 class="skills__header">SASS</h2>
+            <h2 class="skills__heading">SASS</h2>
             <p class="skills__paragraph">3 Years Experience</p>
           </div>
         </div>
       </section>
       <hr class="horizontal-line container" />
-      <section class="test">
-        <h1>hello</h1>
+      <section class="projects">
+        <div class="container projects__container">
+          <h2 class="projects__heading">Projects</h2>
+          <div class="projects__project-container">
+            <div class="projects__project">
+              <div class="projects__image-wrapper">
+                <picture>
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="resources/images/thumbnail-project-1-large.webp"
+                  />
+                  <img
+                    class="project__image"
+                    src="resources/images/thumbnail-project-1-small.webp"
+                    alt="picture of Adam Keyes"
+                  />
+                </picture>
+                <div class="projects__links projects__links--desktop">
+                  <a href="#" class="link-primary projects__link"
+                    >View Project</a
+                  >
+                  <a href="#" class="link-primary projects__link">View Code</a>
+                </div>
+              </div>
+              <h3 class="projects__project-heading">Design Portfolio</h3>
+              <div class="projects__technologies-container">
+                <p class="projects__technology">HTML</p>
+                <p class="projects__technology">CSS</p>
+              </div>
+              <div class="projects__links">
+                <a href="#" class="link-primary projects__link">View Project</a>
+                <a href="#" class="link-primary projects__link">View Code</a>
+              </div>
+            </div>
+            <div class="projects__project">
+              <div class="projects__image-wrapper">
+                <picture>
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="resources/images/thumbnail-project-2-large.webp"
+                  />
+                  <img
+                    class="project__image"
+                    src="resources/images/thumbnail-project-2-small.webp"
+                    alt="picture of Adam Keyes"
+                  />
+                </picture>
+                <div class="projects__links projects__links--desktop">
+                  <a href="#" class="link-primary projects__link"
+                    >View Project</a
+                  >
+                  <a href="#" class="link-primary projects__link">View Code</a>
+                </div>
+              </div>
+              <h3 class="projects__project-heading">E-learning landing page</h3>
+              <div class="projects__technologies-container">
+                <p class="projects__technology">HTML</p>
+                <p class="projects__technology">CSS</p>
+              </div>
+              <div class="projects__links">
+                <a href="#" class="link-primary projects__link">View Project</a>
+                <a href="#" class="link-primary projects__link">View Code</a>
+              </div>
+            </div>
+            <div class="projects__project">
+              <div class="projects__image-wrapper">
+                <picture>
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="resources/images/thumbnail-project-3-large.webp"
+                  />
+                  <img
+                    class="project__image"
+                    src="resources/images/thumbnail-project-3-small.webp"
+                    alt="picture of Adam Keyes"
+                  />
+                </picture>
+                <div class="projects__links projects__links--desktop">
+                  <a href="#" class="link-primary projects__link"
+                    >View Project</a
+                  >
+                  <a href="#" class="link-primary projects__link">View Code</a>
+                </div>
+              </div>
+              <h3 class="projects__project-heading">TODO web app</h3>
+              <div class="projects__technologies-container">
+                <p class="projects__technology">HTML</p>
+                <p class="projects__technology">CSS</p>
+                <p class="projects__technology">Javascript</p>
+              </div>
+              <div class="projects__links">
+                <a href="#" class="link-primary projects__link">View Project</a>
+                <a href="#" class="link-primary projects__link">View Code</a>
+              </div>
+            </div>
+            <div class="projects__project">
+              <div class="projects__image-wrapper">
+                <picture>
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="resources/images/thumbnail-project-4-large.webp"
+                  />
+                  <img
+                    class="project__image"
+                    src="resources/images/thumbnail-project-4-small.webp"
+                    alt="picture of Adam Keyes"
+                  />
+                </picture>
+                <div class="projects__links projects__links--desktop">
+                  <a href="#" class="link-primary projects__link"
+                    >View Project</a
+                  >
+                  <a href="#" class="link-primary projects__link">View Code</a>
+                </div>
+              </div>
+              <h3 class="projects__project-heading">Entertainment web app</h3>
+              <div class="projects__technologies-container">
+                <p class="projects__technology">HTML</p>
+                <p class="projects__technology">CSS</p>
+                <p class="projects__technology">Javascript</p>
+              </div>
+              <div class="projects__links">
+                <a href="#" class="link-primary projects__link">View Project</a>
+                <a href="#" class="link-primary projects__link">View Code</a>
+              </div>
+            </div>
+            <div class="projects__project">
+              <div class="projects__image-wrapper">
+                <picture>
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="resources/images/thumbnail-project-5-large.webp"
+                  />
+                  <img
+                    class="project__image"
+                    src="resources/images/thumbnail-project-5-small.webp"
+                    alt="picture of Adam Keyes"
+                  />
+                </picture>
+                <div class="projects__links projects__links--desktop">
+                  <a href="#" class="link-primary projects__link"
+                    >View Project</a
+                  >
+                  <a href="#" class="link-primary projects__link">View Code</a>
+                </div>
+              </div>
+              <h3 class="projects__project-heading">Memory game</h3>
+              <div class="projects__technologies-container">
+                <p class="projects__technology">HTML</p>
+                <p class="projects__technology">CSS</p>
+                <p class="projects__technology">Javascript</p>
+              </div>
+              <div class="projects__links">
+                <a href="#" class="link-primary projects__link">View Project</a>
+                <a href="#" class="link-primary projects__link">View Code</a>
+              </div>
+            </div>
+            <div class="projects__project">
+              <div class="projects__image-wrapper">
+                <picture>
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="resources/images/thumbnail-project-6-large.webp"
+                  />
+                  <img
+                    class="project__image"
+                    src="resources/images/thumbnail-project-6-small.webp"
+                    alt="picture of Adam Keyes"
+                  />
+                </picture>
+                <div class="projects__links projects__links--desktop">
+                  <a href="#" class="link-primary projects__link"
+                    >View Project</a
+                  >
+                  <a href="#" class="link-primary projects__link">View Code</a>
+                </div>
+              </div>
+              <h3 class="projects__project-heading">Art Gallery Showcase</h3>
+              <div class="projects__technologies-container">
+                <p class="projects__technology">HTML</p>
+                <p class="projects__technology">CSS</p>
+                <p class="projects__technology">Javascript</p>
+              </div>
+              <div class="projects__links">
+                <a href="#" class="link-primary projects__link">View Project</a>
+                <a href="#" class="link-primary projects__link">View Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   </body>
