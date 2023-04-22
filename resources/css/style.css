@@ -101,6 +101,10 @@ footer {
   color: var(--clr-primary);
 }
 
+.horizontal-line-wrapper {
+  background-color: var(--clr-bg-semidark);
+}
+
 .horizontal-line {
   background-color: var(--clr-horizontal-line);
   border: 0;
@@ -599,5 +603,32 @@ footer {
 
   .contact__rings-img {
     bottom: 0;
+  }
+}
+
+/* FOOTER */
+
+.footer {
+  background-color: var(--clr-bg-semidark);
+  padding: 2rem var(--section-padding);
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer__title {
+  font-size: var(--fs-m);
+  line-height: var(--line-height-m);
+}
+
+@media screen and (min-width: 768px) {
+  .footer__container {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
