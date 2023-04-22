@@ -106,7 +106,7 @@ footer {
   border: 0;
   height: 1px;
   width: calc(100% - calc(2 * var(--section-padding)));
-  margin: 0 auto 4rem auto;
+  margin: 0 auto;
 }
 
 /* HEADER */
@@ -152,6 +152,7 @@ footer {
 
 .intro {
   padding: 0;
+  margin-bottom: 4rem;
 }
 
 .intro__container {
@@ -159,7 +160,6 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 4rem;
 }
 
 .intro__profile-img {
@@ -305,5 +305,58 @@ footer {
     top: auto;
     bottom: 50px;
     right: calc(27.8rem - 64.5px);
+  }
+}
+
+/* SKILLS */
+
+.skills {
+  margin: 2rem 0;
+}
+
+.skills__container {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.skills__skill {
+  text-align: center;
+}
+
+.skills__header {
+  font-size: var(--fs-l);
+  line-height: var(--line-height-l);
+  letter-spacing: var(--letter-spacing-l);
+}
+
+.skills__paragraph {
+  font-size: var(--fs-reg);
+  line-height: var(--line-height-reg);
+  color: var(--clr-text-semilight);
+}
+
+@media screen and (min-width: 768px) {
+  .skills {
+    margin: 4rem 0;
+  }
+
+  .skills__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 1.5rem;
+  }
+
+  .skills__skill {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .skills__container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem 1.5rem;
+  }
+
+  .skills__skill {
+    text-align: left;
   }
 }
