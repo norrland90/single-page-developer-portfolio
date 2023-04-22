@@ -21,6 +21,7 @@
   --clr-text-light: rgb(255, 255, 255);
   --clr-text-semilight: rgb(217, 217, 217);
   --clr-warning: rgb(255, 111, 91);
+  --clr-horizontal-line: rgb(151, 151, 151);
 
   /* Fonts */
   --ft-family: 'Space Grotesk', sans-serif;
@@ -100,6 +101,13 @@ footer {
   color: var(--clr-primary);
 }
 
+.horizontal-line {
+  background-color: var(--clr-horizontal-line);
+  border: 0;
+  height: 1px;
+  margin-bottom: 4rem;
+}
+
 /* HEADER */
 
 .header {
@@ -147,6 +155,7 @@ footer {
   flex-direction: column;
   align-items: center;
   border: 1px solid white;
+  margin-bottom: 4rem;
 }
 
 .intro__profile-img {
@@ -218,7 +227,7 @@ footer {
   }
 
   .intro__paragraph {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 }
 
