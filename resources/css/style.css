@@ -317,6 +317,7 @@ footer {
 .skills__container {
   display: grid;
   gap: 1.5rem;
+  position: relative;
 }
 
 .skills__skill {
@@ -335,6 +336,12 @@ footer {
   color: var(--clr-text-semilight);
 }
 
+.skills__rings-img {
+  position: absolute;
+  right: -265px;
+  bottom: -97px;
+}
+
 @media screen and (min-width: 768px) {
   .skills {
     margin: 4rem 0;
@@ -347,6 +354,10 @@ footer {
 
   .skills__skill {
     text-align: left;
+  }
+
+  .horizontal-line--skills {
+    display: none;
   }
 }
 
