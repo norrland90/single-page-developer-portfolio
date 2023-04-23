@@ -1,46 +1,46 @@
 const form = document.querySelector('.form');
+const formInputItems = document.querySelectorAll('.form__input');
+const formSubmit = document.querySelector('.form__submit');
 const nameInput = document.querySelector('.form__name-input');
 const emailInput = document.querySelector('.form__email-input');
 const messageInput = document.querySelector('.form__message-input');
-const formSubmit = document.querySelector('.form__submit');
-let nameClickable = false;
-let emailClickable = false;
-let messageClickable = false;
 
 function onSubmit(e) {
   e.preventDefault();
-}
+  resetValidation();
 
-function checkSubmitClickability() {
-  if (nameClickable && emailClickable && messageClickable) {
-    formSubmit.classList.remove('inactive');
+  const nameInputValue = nameInput.value;
+  const emailInputValue = emailInput.value;
+  const messageInputValue = messageInput.value;
+
+  if (!validateName(nameInputValue)) {
+    addWarning(nameInput);
   } else {
-    formSubmit.classList.add('inactive');
+    addGreenLine(nameInput);
   }
-}
 
-function onInput(e) {
-  if (e.target === nameInput) {
-    onNameInput(e);
-  } else if (e.target === emailInput) {
-    onEmailInput(e);
-  } else if (e.target === messageInput) {
-    onMessageInput(e);
-  }
-  checkSubmitClickability();
-}
-
-function onNameInput(e) {
-  if (e.target.value.length === 0) {
-    nameInput.style.borderBottom = '1px solid var(--clr-text-semilight)';
-    nameClickable = false;
-  } else if (!validateName(e.target.value) || e.target.value.length <= 1) {
-    nameInput.style.borderBottom = '1px solid var(--clr-warning)';
-    nameClickable = false;
+  if (!validateEmail(emailInputValue)) {
+    addWarning(emailInput);
   } else {
-    nameInput.style.borderBottom = '1px solid var(--clr-primary)';
-    nameClickable = true;
+    addGreenLine(emailInput);
   }
+
+  if (!validateMessage(messageInputValue)) {
+    addWarning(messageInput);
+  } else {
+    addGreenLine(messageInput);
+  }
+}
+
+function resetValidation() {
+  formInputItems.forEach((element) => {
+    if (element.firstElementChild.nextElementSibling) {
+      element.firstElementChild.nextElementSibling.remove();
+    }
+    if (element.nextElementSibling.classList.contains('form__warning-text')) {
+      element.nextElementSibling.remove();
+    }
+  });
 }
 
 function validateName(name) {
@@ -48,38 +48,45 @@ function validateName(name) {
   return res.test(String(name).toLowerCase());
 }
 
-function onEmailInput(e) {
-  if (validateEmail(e.target.value)) {
-    emailInput.style.borderBottom = '1px solid var(--clr-primary)';
-    emailClickable = true;
-  } else if (!validateEmail(e.target.value) && e.target.value.length >= 1) {
-    emailInput.style.borderBottom = '1px solid var(--clr-warning)';
-    emailClickable = false;
-  } else {
-    emailInput.style.borderBottom = '1px solid var(--clr-text-semilight)';
-    emailClickable = false;
-  }
-}
-
 function validateEmail(email) {
   const res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   return res.test(String(email).toLowerCase());
 }
 
-function onMessageInput(e) {
-  if (e.target.value.length === 0) {
-    messageInput.style.borderBottom = '1px solid var(--clr-text-semilight)';
-    messageClickable = false;
-  } else if (e.target.value.length < 10) {
-    messageInput.style.borderBottom = '1px solid var(--clr-warning)';
-    messageClickable = false;
+function validateMessage(message) {
+  if (message.length < 10) {
+    return false;
   } else {
-    messageInput.style.borderBottom = '1px solid var(--clr-primary)';
-    messageClickable = true;
+    return true;
   }
 }
 
+function addWarning(element) {
+  const icon = createIcon();
+  element.insertAdjacentElement('afterend', icon);
+
+  const warningText = createWarningText();
+  element.parentElement.insertAdjacentElement('afterend', warningText);
+
+  element.parentElement.style.borderBottom = '1px solid var(--clr-warning)';
+  element.parentElement.style.marginBottom = '0.25rem';
+}
+
+function addGreenLine(element) {
+  element.parentElement.style.borderBottom = '1px solid var(--clr-primary)';
+}
+
+function createIcon() {
+  const icon = document.createElement('i');
+  icon.classList = 'fa-regular fa-circle-xmark';
+  return icon;
+}
+
+function createWarningText() {
+  const warningText = document.createElement('p');
+  warningText.classList = 'form__warning-text';
+  warningText.innerText = 'Sorry, invalid format';
+  return warningText;
+}
+
 form.addEventListener('submit', onSubmit);
-nameInput.addEventListener('input', onInput);
-emailInput.addEventListener('input', onInput);
-messageInput.addEventListener('input', onInput);

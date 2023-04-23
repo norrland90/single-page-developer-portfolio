@@ -531,6 +531,21 @@ footer {
 }
 
 .form__input {
+  display: flex;
+  align-items: start;
+  margin-bottom: 1rem;
+  padding: 1rem 0 1rem 1rem;
+  border-bottom: 1px solid var(--clr-text-semilight);
+}
+
+.form i {
+  color: var(--clr-warning);
+}
+
+.form__warning-text {
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--clr-warning);
   margin-bottom: 1rem;
 }
 
@@ -539,12 +554,14 @@ footer {
   width: 100%;
   background: 0;
   border: 0;
-  border-bottom: 1px solid var(--clr-text-semilight);
-  padding: 1rem;
   color: var(--clr-text-light);
   font-family: var(--ft-family);
   font-size: 1rem;
   text-transform: uppercase;
+}
+
+.form__message-input-wrapper {
+  margin-bottom: 2rem;
 }
 
 .form__input textarea {
@@ -571,11 +588,6 @@ footer {
   border-bottom: 2px solid var(--clr-primary);
   background: 0;
   cursor: pointer;
-}
-
-.inactive {
-  pointer-events: none;
-  opacity: 0.75;
 }
 
 .contact__rings-img {

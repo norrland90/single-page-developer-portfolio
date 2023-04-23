@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="./resources/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/2eb8bd0a18.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="resources/js/script.js" defer></script>
     <title>Adam Keyes</title>
   </head>
@@ -338,15 +342,19 @@
                 name="name"
                 placeholder="Name"
               />
+              <!-- <i class="fa-regular fa-circle-xmark"></i> -->
             </div>
+            <!-- <p class="form__warning-text">Sorry, invalid format</p> -->
             <div class="form__input form__email-input-wrapper">
               <input
-                type="email"
+                type="text"
                 class="form__email-input"
                 name="email"
                 placeholder="Email"
               />
+              <!-- <i class="fa-regular fa-circle-xmark"></i> -->
             </div>
+            <!-- <p class="form__warning-text">Sorry, invalid format</p> -->
             <div class="form__input form__message-input-wrapper">
               <textarea
                 class="form__message-input"
@@ -355,12 +363,14 @@
                 rows="5"
                 placeholder="Message"
               ></textarea>
+              <!-- <i class="fa-regular fa-circle-xmark"></i> -->
             </div>
+            <!-- <p class="form__warning-text">Sorry, invalid format</p> -->
             <div class="form__submit-wrapper">
               <input
                 type="submit"
                 value="Send Message"
-                class="form__submit link-primary inactive"
+                class="form__submit link-primary"
               />
             </div>
           </form>
