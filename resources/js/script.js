@@ -4,6 +4,7 @@ const formSubmit = document.querySelector('.form__submit');
 const nameInput = document.querySelector('.form__name-input');
 const emailInput = document.querySelector('.form__email-input');
 const messageInput = document.querySelector('.form__message-input');
+const eraseButtons = document.querySelectorAll('.erase-btn');
 
 function onSubmit(e) {
   e.preventDefault();
@@ -78,7 +79,7 @@ function addGreenLine(element) {
 
 function createIcon() {
   const icon = document.createElement('i');
-  icon.classList = 'fa-regular fa-circle-xmark';
+  icon.classList = 'fa-regular fa-circle-xmark erase-btn';
   return icon;
 }
 
@@ -89,4 +90,12 @@ function createWarningText() {
   return warningText;
 }
 
+function onFormClick(e) {
+  if (e.target.classList.contains('erase-btn')) {
+    e.target.previousElementSibling.value = '';
+    e.target.previousElementSibling.focus();
+  }
+}
+
 form.addEventListener('submit', onSubmit);
+form.addEventListener('click', onFormClick);

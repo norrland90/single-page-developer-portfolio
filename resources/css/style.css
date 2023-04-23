@@ -590,6 +590,10 @@ footer {
   cursor: pointer;
 }
 
+.erase-btn {
+  cursor: pointer;
+}
+
 .contact__rings-img {
   position: absolute;
   left: -265px;
