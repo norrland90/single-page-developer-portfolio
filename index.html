@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="./resources/css/style.css" />
+    <script src="resources/js/script.js" defer></script>
     <title>Adam Keyes</title>
   </head>
   <body>
@@ -54,7 +55,7 @@
           <div class="intro__profile-picture-container">
             <picture>
               <source
-                media="(min-width: 1150px)"
+                media="(min-width: 1100px)"
                 srcset="resources/images/image-profile-desktop.webp"
               />
               <source
@@ -319,7 +320,7 @@
           </div>
         </div>
       </section>
-      <section class="contact">
+      <section class="contact" id="contact">
         <div class="container contact__container">
           <div class="contact__text">
             <h2 class="contact__heading">Contact</h2>
@@ -329,7 +330,7 @@
               possible.
             </p>
           </div>
-          <form action="#" class="form">
+          <form class="form">
             <div class="form__input form__name-input-wrapper">
               <input
                 type="text"
@@ -359,7 +360,7 @@
               <input
                 type="submit"
                 value="Send Message"
-                class="form__submit link-primary"
+                class="form__submit link-primary inactive"
               />
             </div>
           </form>

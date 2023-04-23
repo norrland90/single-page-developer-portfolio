@@ -58,7 +58,7 @@
   }
 }
 
-@media screen and (min-width: 1150px) {
+@media screen and (min-width: 1100px) {
   :root {
     --fs-xl: 5.5rem;
     --line-height-xl: 5.5rem;
@@ -267,7 +267,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 1150px) {
+@media screen and (min-width: 1100px) {
   .intro {
     padding: 0 var(--section-padding);
   }
@@ -496,7 +496,7 @@ footer {
 
 .contact {
   background-color: var(--clr-bg-semidark);
-  padding: 2rem 0;
+  padding: 2rem var(--section-padding);
 }
 
 .contact__container {
@@ -547,6 +547,10 @@ footer {
   text-transform: uppercase;
 }
 
+.form__input textarea {
+  resize: none;
+}
+
 .form__input input:focus,
 .form__input textarea:focus {
   outline: 0;
@@ -569,6 +573,11 @@ footer {
   cursor: pointer;
 }
 
+.inactive {
+  pointer-events: none;
+  opacity: 0.75;
+}
+
 .contact__rings-img {
   position: absolute;
   left: -265px;
@@ -577,7 +586,7 @@ footer {
 
 @media screen and (min-width: 768px) {
   .contact {
-    padding: 4rem 0;
+    padding: 4rem var(--section-padding);
   }
 
   .contact__container {
