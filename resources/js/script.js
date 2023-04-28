@@ -31,6 +31,42 @@ function onSubmit(e) {
   } else {
     addGreenLine(messageInput);
   }
+
+  if (
+    validateName(nameInputValue) &&
+    validateEmail(emailInputValue) &&
+    validateMessage(messageInputValue)
+  ) {
+    resetForm();
+    messageSentAlert();
+  }
+}
+
+function messageSentAlert() {
+  const message = document.createElement('p');
+  message.classList.add('message-sent-paragraph');
+  message.innerText = 'Message sent!';
+  form.insertAdjacentElement('afterend', message);
+  removeSentMessage(message);
+}
+
+function removeSentMessage(message) {
+  setTimeout(function () {
+    message.classList.add('message-sent-paragraph--invisible');
+  }, 2500);
+
+  setTimeout(function () {
+    message.remove();
+  }, 3500);
+}
+
+function resetForm() {
+  nameInput.value = '';
+  emailInput.value = '';
+  messageInput.value = '';
+  formInputItems.forEach((item) => {
+    item.style.borderBottom = '1px solid var(--clr-text-semilight)';
+  });
 }
 
 function resetValidation() {

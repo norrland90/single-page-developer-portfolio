@@ -120,7 +120,7 @@ footer {
   left: 0;
   right: 0;
   z-index: 10;
-  padding: 1rem var(--section-padding);
+  padding: 1.5rem var(--section-padding);
 }
 
 .header__container {
@@ -389,7 +389,6 @@ footer {
 .projects__heading {
   margin-bottom: 2rem;
 
-  /* Same as intro heading */
   font-size: var(--fs-xl);
   letter-spacing: var(--letter-spacing-xl);
   line-height: var(--line-height-xl);
@@ -604,6 +603,18 @@ footer {
   bottom: 20px;
 }
 
+.message-sent-paragraph {
+  font-size: var(--fs-reg);
+  line-height: var(--line-height-reg);
+  color: var(--clr-text-semilight);
+
+  transition: opacity 1000ms ease-in-out;
+}
+
+.message-sent-paragraph--invisible {
+  opacity: 0;
+}
+
 @media screen and (min-width: 768px) {
   .contact {
     padding: 4rem var(--section-padding);
@@ -639,7 +650,7 @@ footer {
 
 .footer {
   background-color: var(--clr-bg-semidark);
-  padding: 2rem var(--section-padding);
+  padding: 1.5rem var(--section-padding);
 }
 
 .footer__container {
