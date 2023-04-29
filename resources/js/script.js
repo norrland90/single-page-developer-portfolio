@@ -1,10 +1,14 @@
+// VARIABLES
+
 const form = document.querySelector('.form');
 const formInputItems = document.querySelectorAll('.form__input');
 const formSubmit = document.querySelector('.form__submit');
-const nameInput = document.querySelector('.form__name-input');
-const emailInput = document.querySelector('.form__email-input');
-const messageInput = document.querySelector('.form__message-input');
+const nameInput = document.querySelector('#form__name-input');
+const emailInput = document.querySelector('#form__email-input');
+const messageInput = document.querySelector('#form__message-input');
 const eraseButtons = document.querySelectorAll('.erase-btn');
+
+// FUNCTIONS
 
 function onSubmit(e) {
   e.preventDefault();
@@ -40,24 +44,6 @@ function onSubmit(e) {
     resetForm();
     messageSentAlert();
   }
-}
-
-function messageSentAlert() {
-  const message = document.createElement('p');
-  message.classList.add('message-sent-paragraph');
-  message.innerText = 'Message sent!';
-  form.insertAdjacentElement('afterend', message);
-  removeSentMessage(message);
-}
-
-function removeSentMessage(message) {
-  setTimeout(function () {
-    message.classList.add('message-sent-paragraph--invisible');
-  }, 2500);
-
-  setTimeout(function () {
-    message.remove();
-  }, 3500);
 }
 
 function resetForm() {
@@ -133,5 +119,24 @@ function onFormClick(e) {
   }
 }
 
+function messageSentAlert() {
+  const message = document.createElement('p');
+  message.classList.add('message-sent-text');
+  message.innerText = 'Message sent!';
+  form.insertAdjacentElement('beforeend', message);
+  removeSentMessage(message);
+}
+
+function removeSentMessage(message) {
+  setTimeout(function () {
+    message.classList.add('message-sent-text--invisible');
+  }, 2500);
+
+  setTimeout(function () {
+    message.remove();
+  }, 3500);
+}
+
+// EVENT LISTENERS
 form.addEventListener('submit', onSubmit);
 form.addEventListener('click', onFormClick);

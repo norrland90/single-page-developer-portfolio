@@ -164,10 +164,11 @@ footer {
 }
 
 .intro__container {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  position: relative;
 }
 
 .intro__profile-img {
@@ -516,7 +517,6 @@ footer {
 .contact__heading {
   margin-bottom: 1rem;
 
-  /* Same as intro heading */
   font-size: var(--fs-xl);
   letter-spacing: var(--letter-spacing-xl);
   line-height: var(--line-height-xl);
@@ -541,17 +541,6 @@ footer {
   border-bottom: 1px solid var(--clr-text-semilight);
 }
 
-.form i {
-  color: var(--clr-warning);
-}
-
-.form__warning-text {
-  text-align: right;
-  font-size: 0.75rem;
-  color: var(--clr-warning);
-  margin-bottom: 1rem;
-}
-
 .form__input input,
 .form__input textarea {
   width: 100%;
@@ -563,17 +552,17 @@ footer {
   text-transform: uppercase;
 }
 
-.form__message-input-wrapper {
+.form__input input:focus,
+.form__input textarea:focus {
+  outline: 0;
+}
+
+.form__input--message {
   margin-bottom: 2rem;
 }
 
 .form__input textarea {
   resize: none;
-}
-
-.form__input input:focus,
-.form__input textarea:focus {
-  outline: 0;
 }
 
 .form__input ::placeholder {
@@ -593,17 +582,22 @@ footer {
   cursor: pointer;
 }
 
+.form i {
+  color: var(--clr-warning);
+}
+
+.form__warning-text {
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--clr-warning);
+  margin-bottom: 1rem;
+}
+
 .erase-btn {
   cursor: pointer;
 }
 
-.contact__rings-img {
-  position: absolute;
-  left: -265px;
-  bottom: 20px;
-}
-
-.message-sent-paragraph {
+.message-sent-text {
   font-size: var(--fs-reg);
   line-height: var(--line-height-reg);
   color: var(--clr-text-semilight);
@@ -611,8 +605,14 @@ footer {
   transition: opacity 1000ms ease-in-out;
 }
 
-.message-sent-paragraph--invisible {
+.message-sent-text--invisible {
   opacity: 0;
+}
+
+.contact__rings-img {
+  position: absolute;
+  left: -265px;
+  bottom: 20px;
 }
 
 @media screen and (min-width: 768px) {
